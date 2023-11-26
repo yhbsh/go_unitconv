@@ -4,7 +4,7 @@ package main
 import (
 	"fmt"
 	"os"
-	"playground/tempconv"
+	"playground/unitconv"
 	"strconv"
 )
 
@@ -15,15 +15,15 @@ func main() {
 			fmt.Fprintf(os.Stderr, "cf: %v\n", err)
 			os.Exit(1)
 		}
-		f := tempconv.Fahrenheit(t)
-		c := tempconv.Celsius(t)
-		m := tempconv.Meter(t)
-		ft := tempconv.Feet(t)
+		f := unitconv.Fahrenheit(t)
+		c := unitconv.Celsius(t)
+		m := unitconv.Meter(t)
+		ft := unitconv.Feet(t)
 
 		fmt.Printf("%02s = %02s, %02s = %02s, %02s = %02s, %02s = %02s\n",
-			f, tempconv.FToC(f).String(),
-			c, tempconv.CToF(c).String(),
-			m, tempconv.MToF(m).String(),
-			ft, tempconv.FToM(ft).String())
+			f, unitconv.FToC(f).String(),
+			c, unitconv.CToF(c).String(),
+			m, unitconv.MToF(m).String(),
+			ft, unitconv.FToM(ft).String())
 	}
 }
